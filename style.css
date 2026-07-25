@@ -1,0 +1,916 @@
+/* ==========================================================================
+   Global Variables and Styles Setup
+   ========================================================================== */
+:root {
+    --primary-color: #0052cc;
+    --secondary-color: #333333;
+    --accent-color: #ff5630;
+    --light-bg: #f4f5f7;
+    --white: #ffffff;
+    --dark-text: #172b4d;
+    --light-text: #5e6c84;
+    --border-color: #eeeeee;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    color: var(--dark-text);
+    background-color: var(--white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reusable UI Components */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #0043a4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 82, 204, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #222222;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   1. Header Section (Flexbox)
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.header-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   2. Hero Section (Flexbox/Layout)
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #f4f5f7 0%, #e3e6eb 100%);
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+/* ==========================================================================
+   3. About Us Section (Two-Column Layout)
+   ========================================================================== */
+.about-section {
+    padding: 80px 5%;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--light-text);
+}
+
+.about-text h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+/* ==========================================================================
+   4. Services Section (CSS Grid)
+   ========================================================================== */
+.services-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 40px 25px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-align: left;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.service-card p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. Portfolio Section (CSS Grid & Hover Effects)
+   ========================================================================== */
+.portfolio-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    height: 200px;
+    background-color: #ddd;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. Testimonials Section
+   ========================================================================== */
+.testimonials-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: left;
+}
+
+.testi-text {
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   7. Pricing Section (Flexbox/Grid & Feature Highlighting)
+   ========================================================================== */
+.pricing-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.pricing-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px 30px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin: 20px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   8. Contact Section (Forms Customization)
+   ========================================================================== */
+.contact-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--white);
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+.contact-info {
+    flex: 2;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+/* ==========================================================================
+   9. Footer Section
+   ========================================================================== */
+.site-footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 40px 5%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a, 
+.footer-socials a {
+    color: #cccccc;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover, 
+.footer-socials a:hover {
+    color: var(--white);
+}
+
+/* ==========================================================================
+   PAGE 2: BLOG PAGE LAYOUT (Two-Column Layout)
+   ========================================================================== */
+.blog-page-layout {
+    display: flex;
+    padding: 50px 5%;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.blog-main-container {
+    flex: 3;
+}
+
+/* Blog Banner */
+.blog-banner {
+    margin-bottom: 30px;
+}
+
+.blog-category {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    margin: 15px 0 10px 0;
+    line-height: 1.2;
+}
+
+.blog-meta {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 25px;
+}
+
+/* Responsive Large Featured Image Widget */
+.featured-img-wrapper {
+    width: 100%;
+}
+
+.featured-article-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Typography Hierarchy & Spacing */
+.blog-article-content h2 {
+    font-size: 1.8rem;
+    margin: 35px 0 15px 0;
+    color: var(--secondary-color);
+}
+
+.blog-article-content h3 {
+    font-size: 1.4rem;
+    margin: 25px 0 10px 0;
+    color: var(--secondary-color);
+}
+
+.blog-article-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: justify;
+}
+
+.blog-article-content ul, 
+.blog-article-content ol {
+    margin-bottom: 25px;
+    padding-left: 30px;
+}
+
+.blog-article-content li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.blog-article-content blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 30px 0;
+    background-color: var(--light-bg);
+}
+
+/* Author Info Card Layout */
+.author-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 50px 0;
+}
+
+.author-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+.author-info h3 {
+    margin-bottom: 8px;
+}
+
+.author-info p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+/* Related Articles Grid System */
+.related-articles {
+    margin-bottom: 50px;
+}
+
+.related-articles h2 {
+    margin-bottom: 25px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.related-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-card img {
+    border-radius: 6px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.related-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.related-card p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.btn-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Comments Section Layout */
+.comments-section {
+    margin-bottom: 50px;
+}
+
+.comments-section h2 {
+    margin-bottom: 25px;
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-item {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    background-color: var(--white);
+}
+
+.comment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.commenter-name {
+    font-weight: bold;
+    color: var(--dark-text);
+}
+
+.comment-date {
+    color: var(--light-text);
+}
+
+.comment-text {
+    font-size: 0.95rem;
+}
+
+/* Newsletter Custom Form Design */
+.newsletter-section {
+    background: linear-gradient(135deg, #0052cc 0%, #003380 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.newsletter-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* ==========================================================================
+   Sidebar UI Elements
+   ========================================================================== */
+.blog-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.sidebar-widget {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.sidebar-widget h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.recent-posts-list, 
+.categories-list {
+    list-style: none;
+}
+
+.recent-posts-list li, 
+.categories-list li {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 8px;
+}
+
+.recent-posts-list a, 
+.categories-list a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.recent-posts-list a:hover, 
+.categories-list a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Responsive Web Design Rules (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Header Responsive Layout */
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero Section Responsive Layout */
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* About Us Stacking Rules */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Pricing Layout Grid Stacking */
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card.featured:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Contact Form Layout */
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Blog Page Layout and Sidebar Repositioning */
+    .blog-page-layout {
+        flex-direction: column;
+    }
+
+    .blog-title {
+        font-size: 1.9rem;
+    }
+
+    .author-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,7 @@
+Copyright (c) 2026 Ahmed Omary. All Rights Reserved.
+
+This repository, its source code, design layout, web components, and associated documentation are the sole intellectual property of Ahmed Omary.
+
+Permission is hereby GRANTED to any person or entity to view and inspect this repository for evaluation, academic review, and professional showcase purposes.
+
+Permission is strictly DENIED for any unauthorized copying, redistribution, modification, sublicensing, or commercial deployment of this code or any portion thereof without explicit written permission from the author (Ahmed Omary).
