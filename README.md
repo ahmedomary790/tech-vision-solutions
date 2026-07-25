@@ -12,7 +12,7 @@ Designed with high-performance semantic architecture, clean visual hierarchy, an
 ---
 
 ## 🌐 Live Demo
-🔗 **Experience the Platform Live:** *Link itapatikana hapa mara tu tutakapowasha GitHub Pages*
+🔗 **Experience the Platform Live:** *[Link itapatikana hapa mara tu tutakapowasha GitHub Pages*](https://ahmedomary790.github.io/tech-vision-solutions/)
 
 ---
 
